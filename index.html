@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliza Román - RE/MAX Jumbo</title>
+    <style>
+        /* Reset y configuración para Google Sites */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal que se ajusta al iframe de Google Sites */
+        .main-container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sección Hero */
+        .hero-section {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #333;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.3);
+            color: #fff;
+            padding: 12px 25px;
+            border: 2px solid rgba(255,255,255,0.6);
+            border-radius: 50px;
+            font-size: 1rem;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        /* Sección beneficios */
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .benefit-stat {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .benefit-stat.green { color: #27ae60; }
+        .benefit-stat.blue { color: #3498db; }
+        .benefit-stat.purple { color: #9b59b6; }
+
+        /* Sección proceso */
+        .process-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Sección testimonios */
+        .testimonials-section {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 25px 20px;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-avatar {
+            background: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .testimonial-avatar.green { background: #27ae60; }
+        .testimonial-avatar.purple { background: #9b59b6; }
+
+        .testimonial-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-stars {
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Sección contacto */
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 60px 20px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .agent-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .agent-title {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .agent-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .btn-contact {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .remax-logo {
+            background: white;
+            color: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .benefits-grid,
+            .process-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .agent-name {
+                font-size: 2rem;
+            }
+        }
+
+        /* Modal de retención */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px;
+        }
+
+        .modal-content h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-modal {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-modal.primary {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-modal.secondary {
+            background: #bdc3c7;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sección Hero -->
+        <section class="hero-section">
+            <h1 class="hero-title">¿Quieres Vender Tu Propiedad?</h1>
+            <p class="hero-subtitle">
+                Te ayudamos a vender tu casa, apartamento o terreno de forma rápida y al mejor precio 
+                del mercado. Sin complicaciones, sin estrés.
+            </p>
+            <div>
+                <a href="#" class="btn-primary" onclick="redirectToForm(event)">
+                    🏠 Evalúa Tu Propiedad GRATIS
+                </a>
+                <span class="btn-secondary">⚡ Respuesta en 24 horas</span>
+            </div>
+        </section>
+
+        <!-- Sección beneficios -->
+        <section class="benefits-section">
+            <h2 class="section-title">¿Por Qué Elegirnos? ✨</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Mejor Precio</h3>
+                    <p>Evaluamos tu propiedad con tecnología avanzada para garantizar el mejor precio del mercado.</p>
+                    <div class="benefit-stat green">+25%</div>
+                    <small>Más valor promedio</small>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Venta Rápida</h3>
+                    <p>Nuestro proceso optimizado reduce el tiempo de venta hasta en un 70% comparado con métodos tradicionales.</p>
+                    <div class="benefit-stat blue">7-15</div>
+                    <small>Días promedio</small>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3 class="benefit-title">Sin Complicaciones</h3>
+                    <p>Nos encargamos de todos los trámites legales y documentación. Tú solo tienes que firmar.</p>
+                    <div class="benefit-stat purple">100%</div>
+                    <small>Gestión completa</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección proceso -->
+        <section class="process-section">
+            <h2 class="section-title">Proceso Simple en 3 Pasos</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Completa el Formulario</h3>
+                    <p>Proporciona los detalles básicos de tu propiedad en nuestro formulario seguro.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Evaluación Profesional</h3>
+                    <p>Nuestro equipo evalúa tu propiedad y te presenta una oferta competitiva en 24 horas.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Cierre Rápido</h3>
+                    <p>Si aceptas nuestra oferta, cerramos la venta en un plazo de 7-15 días hábiles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección testimonios -->
+        <section class="testimonials-section">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MR</div>
+                        <div>
+                            <div class="testimonial-name">María Rodríguez</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Vendí mi apartamento en solo 10 días. El proceso fue súper fácil y el precio fue justo. Muy recomendado."
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar green">CL</div>
+                        <div>
+                            <div class="testimonial-name">Carlos López</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Excelente servicio. Se encargaron de todo y no tuve que preocuparme por nada. Muy profesionales."
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar purple">AG</div>
+                        <div>
+                            <div class="testimonial-name">Ana García</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "La mejor decisión que tomé. Obtuve un precio mejor del que esperaba y sin estrés."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección contacto -->
+        <section class="contact-section">
+            <div class="remax-logo">🏠 RE/MAX</div>
+            <h2 class="agent-name">Eliza Román</h2>
+            <p class="agent-title">Agente Inmobiliario</p>
+            <p class="agent-description">
+                Tu agente inmobiliario de confianza para la venta rápida y segura de propiedades. 
+                Experiencia, profesionalismo y resultados garantizados.
+            </p>
+            <a href="#" class="btn-contact" onclick="redirectToForm(event)">
+                📋 Contactar por Formulario
+            </a>
+            
+            <div class="copyright">
+                © 2024 Eliza Román - RE/MAX Jumbo. Todos los derechos reservados.
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal de retención -->
+    <div id="exitModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>¡Espera!</h3>
+            <p>No te vayas sin obtener tu evaluación GRATUITA. Es rápido y sin compromiso.</p>
+            <div class="modal-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzSVFv9J6OWU0L8Zm5v08SUnEbZYFWnN2oLtmD2xsXfyAyGQ/viewform" 
+                   target="_blank" class="btn-modal primary" onclick="setFormCompleted()">
+                    Ir al Formulario
+                </a>
+                <button class="btn-modal secondary" onclick="closeModal()">
+                    Después
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let formCompleted = sessionStorage.getItem('formCompleted') === 'true';
+        let userInteracted = false;
+
+        document.addEventListener('click', () => userInteracted = true);
+        document.addEventListener('scroll', () => userInteracted = true);
+
+        function redirectToForm(event) {
+            event.preventDefault();
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzSVFv9J6OWU0L8Zm5v08SUnEbZYFWnN2oLtmD2xsXfyAyGQ/viewform', '_blank');
+            setFormCompleted();
+        }
+
+        function setFormCompleted() {
+            formCompleted = true;
+            sessionStorage.setItem('formCompleted', 'true');
+            closeModal();
+        }
+
+        window.addEventListener('beforeunload', function(e) {
+            if (!formCompleted && userInteracted) {
+                e.preventDefault();
+                e.returnValue = 'Por favor completa el formulario antes de salir. Es gratis y toma solo 2 minutos.';
+            }
+        });
+
+        setTimeout(function() {
+            if (!formCompleted && userInteracted) {
+                showModal();
+            }
+        }, 30000);
+
+        function showModal() {
+            document.getElementById('exitModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('exitModal').style.display = 'none';
+        }
+
+        document.getElementById('exitModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
