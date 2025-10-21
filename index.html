@@ -335,6 +335,33 @@
             .agent-name {
                 font-size: 2rem;
             }
+
+            /* Responsive para sección profesional */
+            .professional-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .professional-text {
+                order: 2;
+            }
+            
+            .professional-image {
+                order: 1;
+            }
+            
+            .main-headline {
+                font-size: 2rem;
+            }
+            
+            .sub-headline {
+                font-size: 1.4rem;
+            }
+            
+            .professional-description {
+                font-size: 1.1rem;
+            }
         }
 
         /* Modal de retención */
@@ -391,50 +418,129 @@
             background: #bdc3c7;
             color: #333;
         }
+
+        /* Sección profesional con imagen */
+        .professional-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .professional-text {
+            order: 1;
+        }
+
+        .professional-image {
+            order: 2;
+            text-align: center;
+        }
+
+        .professional-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .professional-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .brand-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .main-headline {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .sub-headline {
+            font-size: 1.8rem;
+            color: #3498db;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .professional-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
     <div class="main-container">
         <!-- Sección Hero -->
         <section class="hero-section">
-            <h1 class="hero-title">¿Quieres Vender Tu Propiedad?</h1>
+            <h1 class="hero-title">Vende tu vivienda con confianza</h1>
             <p class="hero-subtitle">
-                Te ayudamos a vender tu casa, apartamento o terreno de forma rápida y al mejor precio 
-                del mercado. Sin complicaciones, sin estrés.
+                Obtén una valoración gratuita profesional de tu propiedad con <strong>Eliza Román – Agente REMAX Jumbo</strong>. 
+                Resultados reales, cercanía y máxima visibilidad.
             </p>
             <div>
                 <a href="#" class="btn-primary" onclick="redirectToForm(event)">
-                    🏠 Evalúa Tu Propiedad GRATIS
+                    Solicitar valoración gratuita
                 </a>
-                <span class="btn-secondary">⚡ Respuesta en 24 horas</span>
+                <span class="btn-secondary">⚡ Respuesta en menos de 24h</span>
             </div>
         </section>
 
         <!-- Sección beneficios -->
         <section class="benefits-section">
-            <h2 class="section-title">¿Por Qué Elegirnos? ✨</h2>
+            <h2 class="section-title">¿Por qué vender conmigo? 🏆</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3 class="benefit-title">Máxima visibilidad</h3>
+                    <p>Tu vivienda se promociona en +1000 portales y 7000 agentes asociados para garantizar la máxima exposición.</p>
+                    <div class="benefit-stat green">+1000</div>
+                    <small>Portales inmobiliarios</small>
+                </div>
+
+                <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
-                    <h3 class="benefit-title">Mejor Precio</h3>
-                    <p>Evaluamos tu propiedad con tecnología avanzada para garantizar el mejor precio del mercado.</p>
-                    <div class="benefit-stat green">+25%</div>
-                    <small>Más valor promedio</small>
+                    <h3 class="benefit-title">Valoración profesional gratuita</h3>
+                    <p>Conoce el precio real de mercado antes de decidir. Análisis profesional sin compromiso.</p>
+                    <div class="benefit-stat blue">100%</div>
+                    <small>Gratuita y profesional</small>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
-                    <h3 class="benefit-title">Venta Rápida</h3>
-                    <p>Nuestro proceso optimizado reduce el tiempo de venta hasta en un 70% comparado con métodos tradicionales.</p>
-                    <div class="benefit-stat blue">7-15</div>
-                    <small>Días promedio</small>
+                    <div class="benefit-icon">📸</div>
+                    <h3 class="benefit-title">Presentación premium</h3>
+                    <p>Fotografía profesional, vídeo y home staging digital para destacar tu propiedad.</p>
+                    <div class="benefit-stat purple">Premium</div>
+                    <small>Servicio incluido</small>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3 class="benefit-title">Sin Complicaciones</h3>
-                    <p>Nos encargamos de todos los trámites legales y documentación. Tú solo tienes que firmar.</p>
-                    <div class="benefit-stat purple">100%</div>
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Compradores cualificados</h3>
+                    <p>Ahorro de tiempo con visitas filtradas y efectivas de compradores realmente interesados.</p>
+                    <div class="benefit-stat green">Filtradas</div>
+                    <small>Solo interesados reales</small>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <h3 class="benefit-title">Acompañamiento total</h3>
+                    <p>Desde la valoración hasta la firma ante notario. Te acompaño en todo el proceso.</p>
+                    <div class="benefit-stat blue">100%</div>
                     <small>Gestión completa</small>
                 </div>
             </div>
@@ -442,68 +548,115 @@
 
         <!-- Sección proceso -->
         <section class="process-section">
-            <h2 class="section-title">Proceso Simple en 3 Pasos</h2>
+            <h2 class="section-title">Proceso Simple y Profesional</h2>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Completa el Formulario</h3>
-                    <p>Proporciona los detalles básicos de tu propiedad en nuestro formulario seguro.</p>
+                    <h3 class="step-title">Solicita tu valoración</h3>
+                    <p>Completa este breve formulario y te contactaré en menos de 24h para ofrecerte una valoración profesional sin compromiso.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Evaluación Profesional</h3>
-                    <p>Nuestro equipo evalúa tu propiedad y te presenta una oferta competitiva en 24 horas.</p>
+                    <h3 class="step-title">Presentación premium</h3>
+                    <p>Realizamos fotografía profesional, vídeo y home staging digital para maximizar el atractivo de tu propiedad.</p>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Cierre Rápido</h3>
-                    <p>Si aceptas nuestra oferta, cerramos la venta en un plazo de 7-15 días hábiles.</p>
+                    <h3 class="step-title">Máxima visibilidad</h3>
+                    <p>Tu propiedad se promociona en +1000 portales inmobiliarios y llega a 7000 agentes asociados.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Profesional con Imagen -->
+        <section style="background: linear-gradient(135deg, #2c3e50, #34495e); padding: 80px 20px; color: white;">
+            <div class="professional-section">
+                <!-- Contenido de texto -->
+                <div class="professional-text">
+                    <div class="brand-tag">
+                        "TU CASA MERECE MÁS"
+                    </div>
+                    <h2 class="main-headline">
+                        EN GRUPO RE/MAX JUMBO<br>
+                        <span style="color: #3498db;">NO SOLO VENDEMOS CASAS</span>
+                    </h2>
+                    <h3 class="sub-headline">
+                        MULTIPLICAMOS SU VALOR CON<br>
+                        ESTRATEGIA, MARKETING Y EXPERIENCIA.
+                    </h3>
+                    <p class="professional-description">
+                        Como agente profesional de RE/MAX Jumbo, te ofrezco un servicio integral que va más allá de una simple venta. 
+                        Utilizamos las mejores herramientas del mercado para posicionar tu propiedad y obtener el máximo valor.
+                    </p>
+                    <a href="#" class="btn-primary" onclick="redirectToForm(event)" 
+                       style="background: #e74c3c; color: white; font-size: 1.2rem; padding: 18px 40px; border: none;">
+                        <strong>🏠 Solicitar Valoración Profesional</strong>
+                    </a>
+                </div>
+                
+                <!-- Imagen profesional -->
+                <div class="professional-image">
+                    <img src="img.jpg" alt="Eliza Román - Agente RE/MAX Jumbo - Tu casa merece más">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección CTA Intermedio -->
+        <section style="background: linear-gradient(135deg, #e74c3c, #c0392b); padding: 50px 20px; text-align: center; color: white;">
+            <h2 style="font-size: 2.2rem; font-weight: bold; margin-bottom: 20px;">
+                ¿Listo para vender tu vivienda?
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">
+                Obtén una valoración profesional gratuita y descubre cuánto vale realmente tu propiedad
+            </p>
+            <a href="#" class="btn-primary" onclick="redirectToForm(event)" 
+               style="background: white; color: #e74c3c; font-size: 1.2rem; padding: 18px 40px;">
+                <strong>Quiero vender mi vivienda</strong>
+            </a>
+        </section>
+
         <!-- Sección testimonios -->
         <section class="testimonials-section">
-            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <h2 class="section-title">Lo que dicen mis clientes</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-avatar">⭐</div>
                         <div>
-                            <div class="testimonial-name">María Rodríguez</div>
+                            <div class="testimonial-name">María y Antonio</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                     <p class="testimonial-text">
-                        "Vendí mi apartamento en solo 10 días. El proceso fue súper fácil y el precio fue justo. Muy recomendado."
+                        "Gracias a Eliza vendimos en solo 2 meses y sin complicaciones. Siempre disponible y profesional."
                     </p>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar green">CL</div>
+                        <div class="testimonial-avatar green">⭐</div>
                         <div>
-                            <div class="testimonial-name">Carlos López</div>
+                            <div class="testimonial-name">Laura P.</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                     <p class="testimonial-text">
-                        "Excelente servicio. Se encargaron de todo y no tuve que preocuparme por nada. Muy profesionales."
+                        "Se encargó de todo, desde las fotos hasta la firma. La recomiendo al 100%."
                     </p>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar purple">AG</div>
+                        <div class="testimonial-avatar purple">💼</div>
                         <div>
-                            <div class="testimonial-name">Ana García</div>
+                            <div class="testimonial-name">Cliente RE/MAX</div>
                             <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                     <p class="testimonial-text">
-                        "La mejor decisión que tomé. Obtuve un precio mejor del que esperaba y sin estrés."
+                        "Resultados reales, cercanía y máxima visibilidad. Exactamente lo que promete RE/MAX Jumbo."
                     </p>
                 </div>
             </div>
@@ -511,19 +664,25 @@
 
         <!-- Sección contacto -->
         <section class="contact-section">
-            <div class="remax-logo">🏠 RE/MAX</div>
+            <div class="remax-logo">🏠 RE/MAX JUMBO</div>
             <h2 class="agent-name">Eliza Román</h2>
-            <p class="agent-title">Agente Inmobiliario</p>
+            <p class="agent-title">Agente Inmobiliario Profesional</p>
             <p class="agent-description">
-                Tu agente inmobiliario de confianza para la venta rápida y segura de propiedades. 
-                Experiencia, profesionalismo y resultados garantizados.
+                En Grupo RE/MAX Jumbo no solo vendemos casas, <strong>multiplicamos su valor con estrategia, marketing y experiencia</strong>. 
+                "TU CASA MERECE MÁS" - Obtén una valoración profesional gratuita y descubre el verdadero potencial de tu propiedad.
             </p>
-            <a href="#" class="btn-contact" onclick="redirectToForm(event)">
-                📋 Contactar por Formulario
-            </a>
+            <div style="margin: 20px 0;">
+                <a href="#valoracion" class="btn-contact" onclick="redirectToForm(event)">
+                    Solicita tu valoración gratuita
+                </a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 15px; color: #bdc3c7;">
+                Completa este breve formulario y te contactaré en menos de 24h para ofrecerte una valoración profesional sin compromiso.
+            </p>
             
             <div class="copyright">
-                © 2024 Eliza Román - RE/MAX Jumbo. Todos los derechos reservados.
+                © 2024 Eliza Román - RE/MAX Jumbo. Todos los derechos reservados.<br>
+                <small>"Tu casa merece más" - Resultados reales, cercanía y máxima visibilidad</small>
             </div>
         </section>
     </div>
@@ -531,12 +690,13 @@
     <!-- Modal de retención -->
     <div id="exitModal" class="modal-overlay">
         <div class="modal-content">
-            <h3>¡Espera!</h3>
-            <p>No te vayas sin obtener tu evaluación GRATUITA. Es rápido y sin compromiso.</p>
+            <h3>¡Espera! 🏠</h3>
+            <p><strong>No te vayas sin tu valoración GRATUITA</strong><br>
+            Es rápido, profesional y sin compromiso. Te contactaré en menos de 24h.</p>
             <div class="modal-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzSVFv9J6OWU0L8Zm5v08SUnEbZYFWnN2oLtmD2xsXfyAyGQ/viewform" 
                    target="_blank" class="btn-modal primary" onclick="setFormCompleted()">
-                    Ir al Formulario
+                    Solicitar Valoración Gratuita
                 </a>
                 <button class="btn-modal secondary" onclick="closeModal()">
                     Después
@@ -567,7 +727,7 @@
         window.addEventListener('beforeunload', function(e) {
             if (!formCompleted && userInteracted) {
                 e.preventDefault();
-                e.returnValue = 'Por favor completa el formulario antes de salir. Es gratis y toma solo 2 minutos.';
+                e.returnValue = '¿Seguro que quieres irte sin tu valoración gratuita? Te contactaré en menos de 24h.';
             }
         });
 
