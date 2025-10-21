@@ -714,17 +714,23 @@
     <!-- Modal de retención -->
     <div id="exitModal" class="modal-overlay">
         <div class="modal-content">
-            <h3>¡Espera! 🏠</h3>
-            <p><strong>No te vayas sin tu valoración GRATUITA</strong><br>
-            Es rápido, profesional y sin compromiso. Te contactaré en menos de 24h.</p>
+            <h3 style="color:#e74c3c;font-size:2rem;margin-bottom:10px;">¿Seguro que quieres salir?</h3>
+            <p style="font-size:1.15rem;margin-bottom:18px;">
+                <strong>¡Tu valoración gratuita está a un clic!</strong><br>
+                No pierdas la oportunidad de conocer el valor real de tu propiedad.<br>
+                <span style="color:#3498db;font-weight:bold;">Te contactaré en menos de 24h, sin compromiso.</span>
+            </p>
             <div class="modal-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzSVFv9J6OWU0L8Zm5v08SUnEbZYFWnN2oLtmD2xsXfyAyGQ/viewform" 
                    target="_blank" class="btn-modal primary" onclick="setFormCompleted()">
-                    Solicitar Valoración Gratuita
+                    Sí, quiero mi valoración gratuita
                 </a>
                 <button class="btn-modal secondary" onclick="closeModal()">
-                    Después
+                    Salir sin valorar
                 </button>
+            </div>
+            <div style="margin-top:18px;font-size:0.95rem;color:#7f8c8d;">
+                <span>Recuerda: solo toma 1 minuto y es 100% profesional.</span>
             </div>
         </div>
     </div>
@@ -732,9 +738,22 @@
     <script>
         let formCompleted = sessionStorage.getItem('formCompleted') === 'true';
         let userInteracted = false;
+        let pendingNavigation = null;
 
         document.addEventListener('click', () => userInteracted = true);
         document.addEventListener('scroll', () => userInteracted = true);
+
+        // Detectar clic en enlaces externos o internos
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (!formCompleted && userInteracted && target && target.href && !target.classList.contains('btn-primary') && !target.classList.contains('btn-contact') && !target.classList.contains('btn-modal')) {
+                // Si el enlace es externo o recarga la página
+                if (target.target === '_blank') return; // Permitir abrir en nueva pestaña
+                e.preventDefault();
+                pendingNavigation = target.href;
+                showModal();
+            }
+        });
 
         function redirectToForm(event) {
             event.preventDefault();
@@ -750,8 +769,11 @@
 
         window.addEventListener('beforeunload', function(e) {
             if (!formCompleted && userInteracted) {
+                showModal();
+                // El mensaje personalizado no se puede mostrar, pero el modal sí
                 e.preventDefault();
-                e.returnValue = '¿Seguro que quieres irte sin tu valoración gratuita? Te contactaré en menos de 24h.';
+                e.returnValue = '';
+                return '';
             }
         });
 
@@ -767,6 +789,10 @@
 
         function closeModal() {
             document.getElementById('exitModal').style.display = 'none';
+            if (pendingNavigation) {
+                window.location.href = pendingNavigation;
+                pendingNavigation = null;
+            }
         }
 
         document.getElementById('exitModal').addEventListener('click', function(e) {
