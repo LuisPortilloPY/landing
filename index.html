@@ -30,35 +30,87 @@
 
         /* Sección Hero */
         .hero-section {
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
-            padding: 60px 20px;
-            text-align: center;
+            background: linear-gradient(135deg, #1e88e5, #26a69a, #42a5f5);
+            padding: 80px 20px;
             color: white;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-brand {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 500;
+            color: #e3f2fd;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            line-height: 1.6;
+            color: #f0f4f8;
         }
 
         .btn-primary {
-    background: #ffd700;
-    color: #333;
+    background: #ffffff;
+    color: #1e88e5;
     padding: 15px 35px;
     border: none;
     border-radius: 50px;
@@ -70,6 +122,15 @@
     margin: 10px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
     /* Botón flotante WhatsApp */
@@ -101,14 +162,21 @@
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.2);
             color: #fff;
             padding: 12px 25px;
-            border: 2px solid rgba(255,255,255,0.6);
+            border: 2px solid rgba(255,255,255,0.4);
             border-radius: 50px;
             font-size: 1rem;
             margin: 10px;
             display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
         }
 
         /* Sección beneficios */
@@ -169,7 +237,7 @@
 
         /* Sección proceso */
         .process-section {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #37474f, #455a64);
             padding: 60px 20px;
             text-align: center;
             color: white;
@@ -193,20 +261,20 @@
 
         .process-step {
             padding: 30px 20px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.1);
             border-radius: 15px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .process-step:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
         }
 
         .step-number {
-            background: #3498db;
+            background: #1e88e5;
             color: white;
             width: 60px;
             height: 60px;
@@ -217,7 +285,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin: 0 auto 20px;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
             border: 3px solid rgba(255,255,255,0.2);
         }
 
@@ -296,7 +364,7 @@
 
         /* Sección contacto */
         .contact-section {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #37474f, #455a64);
             padding: 60px 20px 40px;
             text-align: center;
             color: white;
@@ -310,7 +378,7 @@
 
         .agent-title {
             font-size: 1.2rem;
-            color: #bdc3c7;
+            color: #b0bec5;
             margin-bottom: 20px;
         }
 
@@ -322,7 +390,7 @@
         }
 
         .btn-contact {
-            background: #e74c3c;
+            background: #1e88e5;
             color: white;
             padding: 15px 35px;
             border: none;
@@ -335,13 +403,13 @@
         }
 
         .btn-contact:hover {
-            background: #c0392b;
+            background: #1565c0;
             transform: translateY(-2px);
         }
 
         .remax-logo {
             background: white;
-            color: #e74c3c;
+            color: #1e88e5;
             padding: 10px 20px;
             border-radius: 10px;
             font-weight: bold;
@@ -359,6 +427,21 @@
 
         /* Responsive para móviles */
         @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
             .hero-title {
                 font-size: 2rem;
             }
@@ -559,19 +642,28 @@
     <div class="main-container">
         <!-- Sección Hero -->
         <section class="hero-section">
-            <h1 class="hero-title">Vende tu vivienda con confianza</h1>
-            <p class="hero-subtitle">
-                Obtén una valoración gratuita profesional de tu propiedad con <strong>Eliza Román – Agente REMAX Jumbo</strong>. 
-                Resultados reales, cercanía y máxima visibilidad.
-            </p>
-            <div>
-                <a href="#" class="btn-primary" onclick="redirectToForm(event)">
-                    Solicitar valoración gratuita
-                </a>
-                <span class="btn-secondary">⚡ Respuesta en menos de 24h</span>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-brand">🏠 RE/MAX JUMBO</div>
+                    <h1 class="hero-title">Vende tu vivienda con confianza</h1>
+                    <h2 class="hero-subtitle">Eliza Román - Agente Inmobiliario Profesional</h2>
+                    <p class="hero-description">
+                        Obtén una valoración gratuita profesional de tu propiedad. Con más de 10 años de experiencia 
+                        y más de 1.000 propiedades vendidas, te ofrezco resultados reales, cercanía y máxima visibilidad.
+                    </p>
+                    <div>
+                        <a href="#" class="btn-primary" onclick="redirectToForm(event)">
+                            Solicitar valoración gratuita
+                        </a>
+                        <span class="btn-secondary">⚡ Respuesta en menos de 24h</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img.jpg" alt="Eliza Román - Agente RE/MAX Jumbo" />
+                </div>
             </div>
     <!-- Botón flotante WhatsApp -->
-    <a href="https://wa.me/595971431106?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20de%20mi%20vivienda" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+    <a href="https://wa.me/34691149687?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20de%20mi%20vivienda" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.661 1.934 6.661L4 29l7.522-1.963A12.96 12.96 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.98 0-3.917-.521-5.61-1.507l-.4-.23-4.47 1.166 1.195-4.36-.26-.424A9.93 9.93 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.13-7.47c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.09-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.18.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.36-.26.29-1 1-.97 2.43.03 1.43 1.04 2.81 1.19 3 .15.19 2.05 3.14 5.01 4.28.7.3 1.25.48 1.68.61.71.23 1.36.2 1.87.12.57-.09 1.65-.67 1.89-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z"/>
         </svg>
@@ -585,40 +677,40 @@
                 <div class="benefit-card">
                     <div class="benefit-icon">🌐</div>
                     <h3 class="benefit-title">Máxima visibilidad</h3>
-                    <p>Tu vivienda se promociona en +1000 portales y 7000 agentes asociados para garantizar la máxima exposición.</p>
+                    <p>Tu vivienda se promociona en +1000 portales y 7000 agentes asociados.</p>
                     <div class="benefit-stat green">+1000</div>
                     <small>Portales inmobiliarios</small>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
-                    <h3 class="benefit-title">Valoración profesional gratuita</h3>
-                    <p>Conoce el precio real de mercado antes de decidir. Análisis profesional sin compromiso.</p>
+                    <h3 class="benefit-title">Valoración profesional</h3>
+                    <p>Análisis del precio real de mercado sin compromiso.</p>
                     <div class="benefit-stat blue">100%</div>
-                    <small>Gratuita y profesional</small>
+                    <small>Gratuita</small>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">📸</div>
                     <h3 class="benefit-title">Presentación premium</h3>
-                    <p>Fotografía profesional, vídeo y home staging digital para destacar tu propiedad.</p>
+                    <p>Fotografía profesional y marketing digital para destacar tu propiedad.</p>
                     <div class="benefit-stat purple">Premium</div>
-                    <small>Servicio incluido</small>
+                    <small>Incluido</small>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🎯</div>
                     <h3 class="benefit-title">Compradores cualificados</h3>
-                    <p>Ahorro de tiempo con visitas filtradas y efectivas de compradores realmente interesados.</p>
-                    <div class="benefit-stat green">Filtradas</div>
+                    <p>Visitas filtradas de compradores realmente interesados.</p>
+                    <div class="benefit-stat green">Efectivas</div>
                     <small>Solo interesados reales</small>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">📋</div>
-                    <h3 class="benefit-title">Acompañamiento total</h3>
-                    <p>Desde la valoración hasta la firma ante notario. Te acompaño en todo el proceso.</p>
-                    <div class="benefit-stat blue">100%</div>
+                    <h3 class="benefit-title">Acompañamiento completo</h3>
+                    <p>Desde la valoración hasta la firma ante notario.</p>
+                    <div class="benefit-stat blue">Total</div>
                     <small>Gestión completa</small>
                 </div>
             </div>
@@ -633,13 +725,8 @@
             </div>
         </section>
 
-        <!-- Sección Profesional con Imagen -->
-        <section style="background: linear-gradient(135deg, #2c3e50, #34495e); padding: 80px 20px; color: white;">
-            <!-- Sección profesional eliminada (imagen y texto) -->
-        </section>
-
         <!-- Sección CTA Intermedio -->
-        <section style="background: linear-gradient(135deg, #e74c3c, #c0392b); padding: 50px 20px; text-align: center; color: white;">
+        <section style="background: linear-gradient(135deg, #1e88e5, #42a5f5); padding: 50px 20px; text-align: center; color: white;">
             <h2 style="font-size: 2.2rem; font-weight: bold; margin-bottom: 20px;">
                 ¿Listo para vender tu vivienda?
             </h2>
@@ -647,7 +734,7 @@
                 Obtén una valoración profesional gratuita y descubre cuánto vale realmente tu propiedad
             </p>
             <a href="#" class="btn-primary" onclick="redirectToForm(event)" 
-               style="background: white; color: #e74c3c; font-size: 1.2rem; padding: 18px 40px;">
+               style="background: white; color: #1e88e5; font-size: 1.2rem; padding: 18px 40px;">
                 <strong>Quiero vender mi vivienda</strong>
             </a>
         </section>
