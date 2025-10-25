@@ -924,12 +924,6 @@
             }
         });
 
-        setTimeout(function() {
-            if (!formCompleted && userInteracted) {
-                showModal();
-            }
-        }, 30000);
-
         function showModal() {
             document.getElementById('exitModal').style.display = 'flex';
         }
